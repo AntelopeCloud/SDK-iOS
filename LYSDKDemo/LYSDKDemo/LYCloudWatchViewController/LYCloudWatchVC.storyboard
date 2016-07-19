@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Cloud Watch View Controller-->
+        <scene sceneID="qJq-vv-Ves">
+            <objects>
+                <viewController storyboardIdentifier="LYCloudWatchVC_ID" id="WHP-th-reb" customClass="LYCloudWatchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yVL-3E-GoR"/>
+                        <viewControllerLayoutGuide type="bottom" id="tnm-TA-y3G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rdH-nO-Ob0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMi-xD-QnJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XMi-xD-QnJ" firstAttribute="top" secondItem="rdH-nO-Ob0" secondAttribute="top" id="G3e-rm-9GF"/>
+                            <constraint firstAttribute="bottom" secondItem="XMi-xD-QnJ" secondAttribute="bottom" id="Wnm-TI-jL2"/>
+                            <constraint firstItem="XMi-xD-QnJ" firstAttribute="leading" secondItem="rdH-nO-Ob0" secondAttribute="leading" id="a07-GT-opY"/>
+                            <constraint firstAttribute="trailing" secondItem="XMi-xD-QnJ" secondAttribute="trailing" id="cMX-yI-c56"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="playerview" destination="XMi-xD-QnJ" id="RaK-Yn-zyK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7g-P8-eAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697.5" y="415.5"/>
+        </scene>
+    </scenes>
+</document>

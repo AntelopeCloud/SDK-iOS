@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Called Internet View Controller-->
+        <scene sceneID="blw-8e-OYw">
+            <objects>
+                <viewController storyboardIdentifier="LYCalledInternetVC_ID" id="aAz-B4-SsW" customClass="LYCalledInternetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I8g-NW-BLC"/>
+                        <viewControllerLayoutGuide type="bottom" id="amN-uv-EaX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ehZ-tc-vR0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="457-g2-RHK" userLabel="playview">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-mj-R24">
+                                <rect key="frame" x="225" y="64" width="150" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0mE-nG-teB"/>
+                                    <constraint firstAttribute="height" constant="200" id="1Yf-eG-hYO"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-AL-CbV">
+                                <rect key="frame" x="164.5" y="319" width="45" height="30"/>
+                                <state key="normal" title="开本地"/>
+                                <connections>
+                                    <action selector="location:" destination="aAz-B4-SsW" eventType="touchUpInside" id="ZDk-Z7-dBY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFn-m6-Pnu">
+                                <rect key="frame" x="164.5" y="369" width="45" height="30"/>
+                                <state key="normal" title="开远程"/>
+                                <connections>
+                                    <action selector="open:" destination="aAz-B4-SsW" eventType="touchUpInside" id="ZaU-uh-5l0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5y-am-ESg">
+                                <rect key="frame" x="153" y="587" width="68" height="30"/>
+                                <state key="normal" title="1280*720"/>
+                                <connections>
+                                    <action selector="change:" destination="aAz-B4-SsW" eventType="touchUpInside" id="pmY-uj-aiu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pA2-Il-m4o">
+                                <rect key="frame" x="20" y="537" width="75" height="30"/>
+                                <state key="normal" title="切换摄像头"/>
+                                <connections>
+                                    <action selector="swapCamer:" destination="aAz-B4-SsW" eventType="touchUpInside" id="CRR-Od-Euq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N5y-am-ESg" firstAttribute="centerX" secondItem="ehZ-tc-vR0" secondAttribute="centerX" id="4X9-jp-vfo"/>
+                            <constraint firstItem="OBP-mj-R24" firstAttribute="top" secondItem="ehZ-tc-vR0" secondAttribute="top" constant="64" id="5F9-b4-WHI"/>
+                            <constraint firstItem="pA2-Il-m4o" firstAttribute="leading" secondItem="ehZ-tc-vR0" secondAttribute="leading" constant="20" id="Eh4-eH-4M9"/>
+                            <constraint firstItem="bFn-m6-Pnu" firstAttribute="top" secondItem="Tfc-AL-CbV" secondAttribute="bottom" constant="20" id="JE0-48-ED9"/>
+                            <constraint firstAttribute="bottom" secondItem="457-g2-RHK" secondAttribute="bottom" id="Je6-vQ-vhr"/>
+                            <constraint firstAttribute="bottom" secondItem="pA2-Il-m4o" secondAttribute="bottom" constant="100" id="MAf-bh-fBq"/>
+                            <constraint firstAttribute="bottom" secondItem="N5y-am-ESg" secondAttribute="bottom" constant="50" id="QXL-Pe-NRM"/>
+                            <constraint firstAttribute="trailing" secondItem="OBP-mj-R24" secondAttribute="trailing" id="Upu-nQ-t3k"/>
+                            <constraint firstItem="457-g2-RHK" firstAttribute="top" secondItem="ehZ-tc-vR0" secondAttribute="top" constant="64" id="amd-DZ-mXs"/>
+                            <constraint firstItem="457-g2-RHK" firstAttribute="leading" secondItem="ehZ-tc-vR0" secondAttribute="leading" id="jYF-XF-tjV"/>
+                            <constraint firstItem="bFn-m6-Pnu" firstAttribute="centerX" secondItem="ehZ-tc-vR0" secondAttribute="centerX" id="mcN-5O-maw"/>
+                            <constraint firstItem="Tfc-AL-CbV" firstAttribute="centerX" secondItem="ehZ-tc-vR0" secondAttribute="centerX" id="o66-wR-PRi"/>
+                            <constraint firstItem="Tfc-AL-CbV" firstAttribute="centerY" secondItem="ehZ-tc-vR0" secondAttribute="centerY" id="uGZ-qW-WYP"/>
+                            <constraint firstAttribute="trailing" secondItem="457-g2-RHK" secondAttribute="trailing" id="uTl-Yg-oGd"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="playview" destination="457-g2-RHK" id="slb-SU-o84"/>
+                        <outlet property="preview" destination="OBP-mj-R24" id="Igj-HX-PeA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zaa-qK-szY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="181"/>
+        </scene>
+    </scenes>
+</document>

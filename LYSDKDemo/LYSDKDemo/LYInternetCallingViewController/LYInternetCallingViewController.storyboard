@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Internet Calling View Controller-->
+        <scene sceneID="04D-DU-Xtu">
+            <objects>
+                <viewController storyboardIdentifier="LYInternetCallingVC_ID" id="Sv6-4e-CDL" customClass="LYInternetCallingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cub-HS-wBM"/>
+                        <viewControllerLayoutGuide type="bottom" id="LC6-Fn-dDl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8cC-Qx-ZHE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAB-In-VF9" userLabel="playview">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95Y-Xm-BEs">
+                                <rect key="frame" x="225" y="64" width="150" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="AVf-0o-0Pn"/>
+                                    <constraint firstAttribute="width" constant="150" id="a5l-uu-jwR"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cat-YG-4Fx" userLabel="开本地采集">
+                                <rect key="frame" x="164.5" y="319" width="45" height="30"/>
+                                <state key="normal" title="开本地"/>
+                                <connections>
+                                    <action selector="location:" destination="Sv6-4e-CDL" eventType="touchUpInside" id="Fv5-BP-6P9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78M-ai-wsN" userLabel="开远程播放">
+                                <rect key="frame" x="164.5" y="369" width="45" height="30"/>
+                                <state key="normal" title="开远程"/>
+                                <connections>
+                                    <action selector="open:" destination="Sv6-4e-CDL" eventType="touchUpInside" id="zSo-IY-r5U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nP5-Un-l7V">
+                                <rect key="frame" x="153" y="587" width="68" height="30"/>
+                                <state key="normal" title="1280*720"/>
+                                <connections>
+                                    <action selector="change:" destination="Sv6-4e-CDL" eventType="touchUpInside" id="zGv-4M-eVv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dt-Tr-vyA">
+                                <rect key="frame" x="30" y="537" width="75" height="30"/>
+                                <state key="normal" title="切换摄像头"/>
+                                <connections>
+                                    <action selector="swapCamera:" destination="Sv6-4e-CDL" eventType="touchUpInside" id="7oM-s8-7m8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="78M-ai-wsN" firstAttribute="top" secondItem="cat-YG-4Fx" secondAttribute="bottom" constant="20" id="4hh-Ry-kHx"/>
+                            <constraint firstAttribute="bottom" secondItem="UAB-In-VF9" secondAttribute="bottom" id="AXe-j7-e5C"/>
+                            <constraint firstItem="78M-ai-wsN" firstAttribute="centerX" secondItem="8cC-Qx-ZHE" secondAttribute="centerX" id="HoF-O6-eXS"/>
+                            <constraint firstItem="5dt-Tr-vyA" firstAttribute="leading" secondItem="8cC-Qx-ZHE" secondAttribute="leading" constant="30" id="HtO-AS-woZ"/>
+                            <constraint firstAttribute="trailing" secondItem="95Y-Xm-BEs" secondAttribute="trailing" id="JYh-gB-67t"/>
+                            <constraint firstItem="95Y-Xm-BEs" firstAttribute="top" secondItem="8cC-Qx-ZHE" secondAttribute="top" constant="64" id="ala-OM-Hu8"/>
+                            <constraint firstItem="cat-YG-4Fx" firstAttribute="centerY" secondItem="8cC-Qx-ZHE" secondAttribute="centerY" id="amF-8H-PRc"/>
+                            <constraint firstItem="UAB-In-VF9" firstAttribute="leading" secondItem="8cC-Qx-ZHE" secondAttribute="leading" id="b2o-pr-cgd"/>
+                            <constraint firstAttribute="trailing" secondItem="UAB-In-VF9" secondAttribute="trailing" id="duk-Zq-dPp"/>
+                            <constraint firstAttribute="bottom" secondItem="nP5-Un-l7V" secondAttribute="bottom" constant="50" id="ekv-Bg-6NI"/>
+                            <constraint firstAttribute="bottom" secondItem="5dt-Tr-vyA" secondAttribute="bottom" constant="100" id="hyB-C7-qLJ"/>
+                            <constraint firstItem="cat-YG-4Fx" firstAttribute="centerX" secondItem="8cC-Qx-ZHE" secondAttribute="centerX" id="mIz-6v-jgc"/>
+                            <constraint firstItem="UAB-In-VF9" firstAttribute="top" secondItem="8cC-Qx-ZHE" secondAttribute="top" constant="64" id="oMv-Zd-YPH"/>
+                            <constraint firstItem="nP5-Un-l7V" firstAttribute="centerX" secondItem="8cC-Qx-ZHE" secondAttribute="centerX" id="xgP-hU-hdo"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="playview" destination="UAB-In-VF9" id="DRt-gP-fRW"/>
+                        <outlet property="preview" destination="95Y-Xm-BEs" id="fFN-r2-cPE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEl-5T-6Dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637" y="37"/>
+        </scene>
+    </scenes>
+</document>
