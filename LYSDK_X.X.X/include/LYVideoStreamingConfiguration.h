@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import "LYTypeDefines.h"
 #import "LYMacroDefines.h"
@@ -20,15 +21,37 @@
  *
  */
 
+
+//当你想要获取到当前采集数据进行特效等处理的时候请记得设置该代理并实现之。(遵循LYVideoStreamingSampleDataDelegate协议)
+//遵循该协议的时候请设置视频编码的数据是经过你处理之后的还是之前的数据。
+@protocol LYVideoStreamingSampleDataDelegate;
+
+
 @interface LYVideoStreamingConfiguration : NSObject
+
+/*！
+ *   摄像头采集数据的代理
+ *   设置之后获取到当前的采集数据进行处理(特效、美颜等)
+ *   设置该代理的时候请一定要设置编码并推流的数据(是处理前的还是处理后的)
+ *   设置该代理的时候请阅读代理处的说明。
+ *  !:注意:设置代理拿到视频采集数据进行处理的时候务必清楚您所要进行的操作的耗时问题，SDK内部会同步等待你执行完代理方法才进行下一帧数据的处理.
+ */
+@property (nonatomic, weak) id<LYVideoStreamingSampleDataDelegate> sampleVideoDataDelegate;
+
+/*！
+ *   如果设置了摄像头采集数据代理并且编码、推流的数据使用处理过后的数据才需要设置，
+ *   默认是编码发送摄像头采集之后的数据。
+ */
+@property (nonatomic, assign) LYVideoDataEncodeType  videoDataEncodeType;
 
 /*！
  *   视频的分辨率，宽高务必设定为 2 的倍数，否则解码播放时可能出现绿边:default 640*480
  */
 @property (nonatomic, assign) CGSize  videoSize;
 
+
 /*！
- *   视频的帧率，即 fps:default 30
+ *   视频的帧率，即 fps:default 30fps 视频通话的时候是15fps
  */
 @property (nonatomic, assign) NSUInteger videoFrameRate;
 
@@ -47,7 +70,7 @@
  */
 @property (nonatomic, assign) LYCaptureCameraMode cameraMode;
 
-/**
+/*!
  *  生成配置时错误信息描述：如果该属性为nil或者为@“”表示参数正确
  */
 @property (weak, nonatomic) NSString *error;
@@ -60,7 +83,7 @@
  */
 + (instancetype) defaultConfiguration;
 
-/**
+/*!
  *  根据自定义分辨率和推流质量生成一个配置
  *
  *  @param videoSize 分辨率
@@ -72,7 +95,7 @@
  */
 + (instancetype) configurationWithVideoSize: (CGSize)videoSize videoQuality: (LYVideoStreamingQualityMode)quality;
 
-/**
+/*!
  *  根据全部自定义参数初始化获取一个新的配置
  *
  *  @param videoSize    分辨率
@@ -100,3 +123,20 @@
 - (NSString *)validate;
 
 @end
+
+
+@protocol LYVideoStreamingSampleDataDelegate <NSObject>
+
+
+@required
+/*!
+ *  摄像头采集进行预览的数据，如果不处理采集数据请勿执行该代理，以避免浪费不必要的性能
+ *
+ *  @param object       调用代理方法的类对象
+ *  @param sampleBuffer 摄像头采集得到的数据（NV12格式的数据）
+ *                      采集得到的yuv数据格式是NV12，并且是按照64字节对齐的方式缓存。请一定要在处理数据的时候熟知数据格式转换。否则处理后的数据不能正常预览。
+ */
+- (void)lyVideoStreaming: (id)object yuvDataWillDisplayForPreview: (CVPixelBufferRef)sampleBuffer;
+
+@end
+
