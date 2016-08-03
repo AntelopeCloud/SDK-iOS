@@ -169,7 +169,7 @@ typedef NS_ENUM(NSInteger, LYVideoDataEncodeType) {
 
 
 
-/*！后期扩展多码率支持使用
+/** 后期扩展多码率支持使用
  *  视频流质量
  */
 typedef NS_ENUM(NSInteger, LYVideoStreamingQualityMode) {
@@ -191,6 +191,16 @@ typedef NS_ENUM(NSInteger, LYAudioStreamingQualityMode) {
     LYAudioStreamingQualityModeHigh1     = 1,  //高1：sample rate:44KHz audio bitrate:96kbps
     LYAudioStreamingQualityModeHigh2     = 2,  //高2：sample rate:44KHz audio bitrate:128kbps
 };
+
+/**
+ *  音频编解码类型
+ *  目前只针对于视频通话
+ */
+typedef NS_ENUM(NSInteger, LYAudioStreamingDataTyep) {
+    LYAudioStreamingDataTyepAAC     = 1,    //AAC编解码
+    LYAudioStreamingDataTyepOPUS    = 2,    //OPUS编解码
+};
+
 
 /**
  *  音频码率

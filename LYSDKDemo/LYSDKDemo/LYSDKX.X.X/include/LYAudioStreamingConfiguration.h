@@ -24,6 +24,13 @@
 @property (nonatomic, assign, readonly) LYAudioStreamingBitRate audioBitRate;
 
 
+/**
+ *  音频的数据类型：是AAC编解码还是OPUS编解码---->视频通话：默认是OPUS编解码、手机直播：只支持AAC编码
+ *  该属性目前版本只支持视频通话时候使用，请熟知!
+ */
+@property (nonatomic, assign) LYAudioStreamingDataTyep audioDataType;
+
+
 @property (nonatomic, assign) NSUInteger audioSampleRate; // 4800 for iPhone 6s family devices, 44100 for others
 
 

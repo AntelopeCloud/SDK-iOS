@@ -155,9 +155,21 @@ typedef NS_ENUM(NSInteger, LYVideoStreamingQualityLevel) {
     LYVideoStreamingQualityModeLevelHigh        = 3,  //高清
 };
 
+#pragma mark - 采集编码数据类型
+/**
+ *  编码的数据类型：(供设置代理拿到当前采集的摄像头数据进行特效或者其他处理的时候使用)
+ *  !!特别注意：编码采用的硬编方式，进行特效等处理的时候数据要是NV12格式的，否则导致编码失败!!
+ *  !默认编码采集出来的原始数据
+ */
+typedef NS_ENUM(NSInteger, LYVideoDataEncodeType) {
+    LYVideoDataEncodeTypeUntreated           = 1,  //原始采集的数据(采集出来的数据进行编码)
+    LYVideoDataEncodeTypeTreated             = 2,  //进行处理过的数据(经过特效等处理后的数据再编码)
+};
 
 
-/*！后期扩展多码率支持使用
+
+
+/** 后期扩展多码率支持使用
  *  视频流质量
  */
 typedef NS_ENUM(NSInteger, LYVideoStreamingQualityMode) {
@@ -176,9 +188,19 @@ typedef NS_ENUM(NSInteger, LYVideoStreamingQualityMode) {
  *  音频流质量
  */
 typedef NS_ENUM(NSInteger, LYAudioStreamingQualityMode) {
-    LYAudioStreamingQualityModeHigh1     = 1,  //高1：sample rate:44MHz audio bitrate:96kbps
-    LYAudioStreamingQualityModeHigh2     = 2,  //高2：sample rate:44MHz audio bitrate:128kbps
+    LYAudioStreamingQualityModeHigh1     = 1,  //高1：sample rate:44KHz audio bitrate:96kbps
+    LYAudioStreamingQualityModeHigh2     = 2,  //高2：sample rate:44KHz audio bitrate:128kbps
 };
+
+/**
+ *  音频编解码类型
+ *  目前只针对于视频通话
+ */
+typedef NS_ENUM(NSInteger, LYAudioStreamingDataTyep) {
+    LYAudioStreamingDataTyepAAC     = 1,    //AAC编解码
+    LYAudioStreamingDataTyepOPUS    = 2,    //OPUS编解码
+};
+
 
 /**
  *  音频码率
@@ -198,7 +220,7 @@ typedef NS_ENUM(NSInteger, LYAudioStreamingBitRate) {
  */
 typedef NS_ENUM(NSInteger, LYLiveBroadcastMode) {
     LYLiveBroadcastModeLiving = 2,  //不带录像的直播
-    LYLiveBroadcastModeRecord = 4   //带录像的直播
+    LYLiveBroadcastModeRecord = 4   //带录像的直播（确保用户拥有开启云存储的权限）
 };
 
 #endif /* LYTypeDefines_h */

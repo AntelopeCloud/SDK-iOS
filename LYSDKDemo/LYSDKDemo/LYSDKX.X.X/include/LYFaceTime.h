@@ -14,6 +14,7 @@
 #import "LYAudioStreamingConfiguration.h"
 #import "LYPlayerConfiguration.h"
 
+
 @interface LYFaceTime : NSObject
 
 
@@ -39,7 +40,6 @@
  */
 - (void) resetVideoConfig: (LYVideoStreamingConfiguration *)videoConfig
               audioConfig: (LYAudioStreamingConfiguration *)audioConfig;
-
 
 #pragma mark - 本地采集和推流控制
 /**
@@ -219,3 +219,5 @@ playerStatus: (playerCallBackBlock)playerBlock;
 
 
 @end
+
+

@@ -50,7 +50,7 @@ NSLog(@"[%s %d]: " format "\n", strrchr(__FILE__, '/') + 1, __LINE__, ## args);
 #define kMESSAGENAME_POP_CONFIG_RESULT_KEY          @"PopConfigResult"      //自己添加获取配置栏
 #define kMESSAGENAME_DEVICE_BIND_CONFIRM_KEY        @"DeviceBindConfirm"    //
 
-/*
+/**
  * messageBody:自定义推送信息-->比如互联时候主叫需要推送给被叫的数据；
  *
  * 如果没有自定义消息：则默认字典返回，key-value如下宏↓
