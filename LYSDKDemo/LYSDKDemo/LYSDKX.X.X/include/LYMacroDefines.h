@@ -43,6 +43,7 @@ NSLog(@"[%s %d]: " format "\n", strrchr(__FILE__, '/') + 1, __LINE__, ## args);
 #define kMESSAGENAME_CONNECTION_ACCEPTTED_KEY       @"ConnectionAcceptted"  //代表互联连接方连接成功之后(被叫方)，等待连接方(主叫方)收到的消息-->表示连接成功
 #define kMESSAGENAME_CONNECTION_CLOSED_KEY          @"ConnectionClosed"     //代表①私有直播时中途出现断开；②互联双方出现断开的消息
 #define kMESSAGENAME_POP_MESSAGE_KEY                @"PopMessage"           //代表互联被叫方接收的推送消息-->比如接收到主叫的呼叫信息、主叫断开等消息
+#define kMESSAGENAME_P2P_MESSAGE_KEY                @"PopP2pMessage"        //P2P消息
 #pragma mark - 下面的消息类型不用处理，忽略掉！！！！！！！
 #define kMESSAGENAME_POP_OFFLINE_MESSAGE_KEY        @"PopOffLineMessage"    //代表设备状态的推送消息
 #define kMESSAGENAME_START_POP_DATA_KEY             @"StartPopData"         //开始取流

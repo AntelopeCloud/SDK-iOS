@@ -217,7 +217,6 @@ playerStatus: (playerCallBackBlock)playerBlock;
  */
 - (void) destroy;
 
-
 @end
 
 
